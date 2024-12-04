@@ -348,5 +348,5 @@ WHERE EXTRACT(MONTH FROM "CREDIT_PURCHASE".purchase_at) = 11
 
 select COUNT(DISTINCT user_id) as 預約會員人數
 from "COURSE_BOOKING"
-where EXTRACT(MONTH FROM created_at) = 11 
+where EXTRACT(MONTH FROM created_at) = 11
 and status = '即將授課';
