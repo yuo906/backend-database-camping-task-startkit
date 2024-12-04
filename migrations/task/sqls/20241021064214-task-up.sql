@@ -55,7 +55,7 @@ SELECT * FROM "USER" LIMIT 3;
     -- 2. 名稱為`14 堂組合包方案`，價格為`2,520` 元，堂數為`14`
     -- 3. 名稱為 `21 堂組合包方案`，價格為`4,800` 元，堂數為`21`
 
-INSERT INTO CREDIT_PACKAGE (name, credit_amount, price)
+INSERT INTO "CREDIT_PACKAGE" (name, credit_amount, price)
 VALUES ('7 堂組合包方案', 7, 1400),
 ('14 堂組合包方案', 14, 2520),
 ('21 堂組合包方案', 21, 4800);
@@ -65,20 +65,20 @@ VALUES ('7 堂組合包方案', 7, 1400),
     -- 2. `王小明` 購買 `21 堂組合包方案`
     -- 3. `好野人` 購買 `14 堂組合包方案`
 
-INSERT INTO CREDIT_PURCHASE (user_id, credit_package_id, purchase_credits, price_paid)
+INSERT INTO "CREDIT_PURCHASE" (user_id, credit_package_id, purchased_credits, price_paid)
 VALUES
 ((SELECT id FROM "USER" WHERE email = 'wXlTq@hexschooltest.io'),
- (SELECT id FROM CREDIT_PACKAGE WHERE name = '14 堂組合包方案'),
- (SELECT credit_amount FROM CREDIT_PACKAGE WHERE name = '14 堂組合包方案'),
- (SELECT price FROM CREDIT_PACKAGE WHERE name = '14 堂組合包方案')),
+ (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+ (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+ (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案')),
 ((SELECT id FROM "USER" WHERE email = 'wXlTq@hexschooltest.io'),
- (SELECT id FROM CREDIT_PACKAGE WHERE name = '21 堂組合包方案'),
- (SELECT credit_amount FROM CREDIT_PACKAGE WHERE name = '21 堂組合包方案'),
- (SELECT price FROM CREDIT_PACKAGE WHERE name = '21 堂組合包方案')),
+ (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案'),
+ (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案'),
+ (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案')),
 ((SELECT id FROM "USER" WHERE email = 'richman@hexschooltest.io'),
- (SELECT id FROM CREDIT_PACKAGE WHERE name = '14 堂組合包方案'),
- (SELECT credit_amount FROM CREDIT_PACKAGE WHERE name = '14 堂組合包方案'),
- (SELECT price FROM CREDIT_PACKAGE WHERE name = '14 堂組合包方案'));
+ (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+ (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+ (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'));
 
 
 -- ████████  █████   █    ████   
